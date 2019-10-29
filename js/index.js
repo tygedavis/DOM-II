@@ -18,20 +18,17 @@ busImg.addEventListener("mouseleave", () => {
 
 //Number 3  //TODO: NOT FINISHED
 
-const littleImg = document.querySelectorAll(".img-content");
-//console.log(littleImg);
+let button = document.querySelector(".btn");
+// console.log(button);
+button.addEventListener("dblclick", () => {
+    let curColor = document.body.style.backgroundColor;
 
-littleImg.addEventListener('wheel', (event) => {
-    let scale = 1;
-
-    event.preventDefault();
-
-    scale += eventdeltaY * -0.01;
-
-    scale = Math.min(Math.max(.125, scale), 4);
-
-    littleImg.style.transform = `scale(${scale})`;
-})
+    if (curColor === 'white'){
+        document.body.style.backgroundColor = 'lightblue';
+    }else{
+        document.body.style.backgroundColor = 'white';
+    }
+});
 
 //Number 4
 
