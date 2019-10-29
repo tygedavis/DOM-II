@@ -101,7 +101,21 @@ secBtn.addEventListener("dblclick", () => {
     }
 })
 
-//For the last button
+//For the last button, also used for propagation
+
+let content = document.querySelector(".content-pick");
+//console.log(destination);
+content.addEventListener("dblclick", () => {
+    content.style.backgroundColor = "pink";
+})
+
+let destination = document.querySelectorAll('.destination');
+console.log(destination);
+destination.forEach(e => {
+    e.addEventListener("dblclick", () => {
+        e.style.backgroundColor = "#00BFFF";
+    })
+})
 
 let lastBtn = document.querySelector(".lastBtn");
 //console.log(lastBtn);
