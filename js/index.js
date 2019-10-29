@@ -16,7 +16,7 @@ busImg.addEventListener("mouseleave", () => {
     busImg.style.transition = "all 0.3s"
 })
 
-//Number 3  //TODO: NOT FINISHED
+//Number 3
 
 let button = document.querySelector(".btn");
 // console.log(button);
@@ -36,7 +36,7 @@ littleImg = document.querySelectorAll('.img-content');
 //console.log(littleImg);
 littleImg.forEach(element => {
     element.addEventListener("click", () => {
-        element.style.transform = "scale(2)";
+        element.style.transform = "scale(3)";
         element.style.transition = "all 0.3s";
     })
 });
@@ -101,7 +101,18 @@ secBtn.addEventListener("dblclick", () => {
     }
 })
 
-//For the last button, also used for propagation
+//Practice for "keydown"
+let imgBrdr = document.querySelector(".img-content img");
+document.addEventListener("keypress", () => {
+    imgBrdr.style.border = "10px solid brown";
+});
+
+// let secImgBrdr = document.querySelector(".img-content img:lastChild");
+// document.addEventListener("keypress", () => {
+//     secImgBrdr.style.border = "10px solid green";
+// });
+
+//For the last button, **also used for nested events**
 
 let content = document.querySelector(".content-pick");
 //console.log(destination);
@@ -112,8 +123,9 @@ content.addEventListener("dblclick", () => {
 let destination = document.querySelectorAll('.destination');
 console.log(destination);
 destination.forEach(e => {
-    e.addEventListener("dblclick", () => {
+    e.addEventListener("dblclick", (event) => {
         e.style.backgroundColor = "#00BFFF";
+        event.stopPropagation();
     })
 })
 
