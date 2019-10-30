@@ -107,10 +107,20 @@ document.addEventListener("keypress", () => {
     imgBrdr.style.border = "10px solid brown";
 });
 
+//I tried playing with CSS selectors but I couldn't get it to work...
 // let secImgBrdr = document.querySelector(".img-content img:lastChild");
 // document.addEventListener("keypress", () => {
 //     secImgBrdr.style.border = "10px solid green";
 // });
+
+//Practice with wheel
+
+let pEffect = document.querySelectorAll("p");
+pEffect.forEach(e => {
+    e.addEventListener("wheel", () => {
+        e.style.filter = "blur(10px)";
+    });
+})
 
 //For the last button, **also used for nested events**
 
@@ -140,5 +150,3 @@ lastBtn.addEventListener("dblclick", () => {
         document.body.style.backgroundColor = 'white';
     }
 })
-
-//
